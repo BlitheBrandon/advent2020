@@ -19,7 +19,7 @@ def clean_data(seq):
 def solution_part_one(inp):
     """Return product of first two integers that add up to 2020"""
     for position, value_a in enumerate(inp[0:-1]):
-        if (2020 - value_a) in inp[position + 1:]:
+        if (2020 - value_a) in inp[position+1:]:
             return value_a * (2020 - value_a)
 
 
