@@ -32,6 +32,11 @@ def solution_part_two(inp):
 
 
 def main():
+    """Get day's input and pass to day's two functions
+
+    Set day of month, get that day's exercise input from file,
+    pass input to part one and part two's functions, print results
+    """
     aoc_day = 1
     exercise_input = get_exercise_input_from_file(aoc_day)
     clean_input = clean_data(exercise_input)
