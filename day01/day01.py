@@ -6,7 +6,7 @@ def get_exercise_input_from_file(num):
     fname = f"day{num:02}_input.txt"
     try:
         with open(fname, "r") as f:
-            return [int(l.rstrip('\n')) for l in f.readlines()]
+            return f.read().split("\n")
     except FileNotFoundError:
         exit(f"File {repr(fname)} not found.")
 
@@ -42,4 +42,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
