@@ -26,8 +26,8 @@ def solution_part_one(inp):
 def solution_part_two(inp):
     """Return product of first three integers that add up to 2020"""
     for position, value_a in enumerate(inp[0:-1]):
-        for value_b in inp[position + 1:]:
-            if (2020 - value_a - value_b) in inp[position + 1:]:
+        for value_b in inp[position+1:]:
+            if (2020 - value_a - value_b) in inp[position+1:]:
                 return value_a * value_b * (2020 - value_a - value_b)
 
 
