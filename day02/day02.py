@@ -11,14 +11,19 @@ def get_exercise_input_from_file(num):
         exit(f"File {repr(fname)} not found.")
 
 
+def get_password_parameters(entry):
+    tmp = entry.split()
+    min_count, max_count = map(int, tmp[0].split("-"))
+    letter = tmp[1][0]
+    password = tmp[2]
+    return letter, min_count, max_count, password
+
+
 def solution_part_one(password_lst):
     """Return count of valid passwords, based on input entry parameters"""
     num_correct_passwords = 0
     for entry in password_lst:
-        tmp = entry.split()
-        min_count, max_count = map(int, tmp[0].split("-"))
-        letter = tmp[1][0]
-        password = tmp[2]
+        letter, min_count, max_count, password = get_password_parameters(entry)
 
         if min_count <= password.count(letter) <= max_count:
             num_correct_passwords += 1
@@ -29,10 +34,7 @@ def solution_part_two(password_lst):
     """Return count of valid passwords, based on input entry parameters"""
     num_correct_passwords = 0
     for entry in password_lst:
-        tmp = entry.split()
-        min_count, max_count = map(int, tmp[0].split("-"))
-        letter = tmp[1][0]
-        password = tmp[2]
+        letter, min_count, max_count, password = get_password_parameters(entry)
 
         if (password[min_count - 1] == letter) ^ (password[max_count - 1] == letter):
             num_correct_passwords += 1
